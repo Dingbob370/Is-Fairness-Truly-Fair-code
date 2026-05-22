@@ -1,0 +1,48 @@
+{
+  "title": "Is Fairness Truly Fair? Code",
+  "upload_type": "software",
+  "description": "Reference implementation and release artifact for the KDD '26 paper \"Is Fairness Truly Fair? Towards Reliable Lipschitz Fairness in Multi-Task Learning via Fixed-delta Alignment.\"",
+  "creators": [
+    {
+      "name": "Ding, Junbo",
+      "affiliation": "Beijing University of Chemical Technology"
+    },
+    {
+      "name": "Zang, Xin",
+      "affiliation": "Beijing University of Chemical Technology"
+    },
+    {
+      "name": "Pan, Chenchen",
+      "affiliation": "Beijing University of Chemical Technology"
+    },
+    {
+      "name": "Song, Donghao",
+      "affiliation": "Beijing University of Chemical Technology"
+    },
+    {
+      "name": "Zhu, Jiaxin",
+      "affiliation": "Beijing University of Chemical Technology"
+    },
+    {
+      "name": "Guo, Danhuai",
+      "affiliation": "Beijing University of Chemical Technology"
+    }
+  ],
+  "access_right": "open",
+  "license": "apache-2.0",
+  "version": "1.0.0",
+  "keywords": [
+    "fair multi-task learning",
+    "Lipschitz fairness",
+    "fixed-delta auditing",
+    "ReLiF",
+    "KDD 2026"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.1145/3770855.3817938",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ]
+}

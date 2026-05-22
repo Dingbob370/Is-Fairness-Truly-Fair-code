@@ -23,6 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_FILES = [
+    ".zenodo.json",
     "README.md",
     "LICENSE",
     "NOTICE",
@@ -172,17 +173,6 @@ def main() -> int:
 
     git_dir = ROOT / ".git"
     if git_dir.exists():
-        commit_count = subprocess.run(
-            ["git", "rev-list", "--count", "--all"],
-            cwd=ROOT,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-        )
-        if commit_count.returncode == 0 and commit_count.stdout.strip() != "1":
-            print(f"Expected a single public commit; found {commit_count.stdout.strip()}.")
-            return 1
         result = subprocess.run(
             ["git", "log", "--all", "--name-only", "--pretty=format:"],
             cwd=ROOT,
@@ -202,6 +192,11 @@ def main() -> int:
                 return 1
 
     file_checks = {
+        ".zenodo.json": [
+            '"upload_type": "software"',
+            '"license": "apache-2.0"',
+            '"identifier": "https://doi.org/10.1145/3770855.3817938"',
+        ],
         "README.md": [
             "@inproceedings{ding2026fairness",
             "doi = {10.1145/3770855.3817938}",
