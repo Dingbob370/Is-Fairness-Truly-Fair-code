@@ -202,7 +202,11 @@ def main() -> int:
                 return 1
 
     file_checks = {
-        "README.md": ["citation as pending", "complete BibTeX entry"],
+        "README.md": [
+            "@inproceedings{ding2026fairness",
+            "doi = {10.1145/3770855.3817938}",
+            "url = {https://doi.org/10.1145/3770855.3817938}",
+        ],
         "eval_ckpt.py": ["default=None, choices=['val', 'test']", "args.split = 'val' if str(config.dataset_name).lower() == 'nyuv2' else 'test'", "Collecting({split})"],
         "eval_grad_norm.py": ["default=None, choices=['val', 'test']", "args.split = 'val' if str(config.dataset_name).lower() == 'nyuv2' else 'test'"],
         "models/backbone.py": ["raise RuntimeError", "allow_random_init"],
@@ -220,6 +224,18 @@ def main() -> int:
     if semantic_hits:
         print("Release semantic checks failed:")
         for hit in semantic_hits:
+            print(f"  - {hit}")
+        return 1
+
+    obsolete_readme_markers = [
+        "citation as pending",
+        "complete BibTeX entry",
+        "metadata is not finalized",
+    ]
+    obsolete_hits = [marker for marker in obsolete_readme_markers if marker in readme]
+    if obsolete_hits:
+        print("Obsolete pending-citation text remains in README:")
+        for hit in obsolete_hits:
             print(f"  - {hit}")
         return 1
 

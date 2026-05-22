@@ -245,6 +245,20 @@ Full training and evaluation require the dependencies in `requirements.txt` and 
 
 ## Citation
 
-The paper has been accepted, but the final camera-ready/proceedings metadata is not finalized yet. Please treat the citation as pending. A complete BibTeX entry with the final author list, proceedings metadata, DOI, and URL will be added after the camera-ready version is finalized.
+If you use this code, please cite:
+
+```bibtex
+@inproceedings{ding2026fairness,
+  title = {Is Fairness Truly Fair? Towards Reliable Lipschitz Fairness in Multi-Task Learning via Fixed-{$\delta$} Alignment},
+  author = {Ding, Junbo and Zang, Xin and Pan, Chenchen and Song, Donghao and Zhu, Jiaxin and Guo, Danhuai},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+  year = {2026},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  isbn = {979-8-4007-2259-2/2026/08},
+  doi = {10.1145/3770855.3817938},
+  url = {https://doi.org/10.1145/3770855.3817938}
+}
+```
 
 For dataset citations, follow the official citation instructions on the PhysioNet pages linked above for MIMIC-III and eICU.
